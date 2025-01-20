@@ -1,0 +1,67 @@
+Running the Python Programs and Understanding Outputs
+
+This document explains how to run the provided Python scripts ("APPModel.py" and "AttributionModel.py") and interpret their outputs. These programs analyze network traffic data to classify and attribute it for specific tasks.
+
+---
+
+Prerequisites
+
+1. Python Environment: Install Python 3.8 or later.
+2. Libraries:
+   - Required libraries include:
+     - pandas
+     - numpy
+     - scikit-learn
+     - imbalanced-learn
+     - matplotlib
+     - seaborn
+
+3. Input Files:
+   - Ensure the following CSV files are in the working directory:
+     - "train.csv": Training dataset with labeled samples.
+     - "test.csv": Testing dataset with labeled samples.
+     - "val_without_labels.csv": Validation dataset without labels for predictions.
+
+---
+
+Steps to Run APPModel.py:
+1. Open a terminal and navigate to the directory containing "APPModel.py".
+2. Execute the script by running:
+   python APPModel.py
+
+Outputs:
+1. Console Output:
+   - Warnings about missing columns (if applicable).
+   - Best hyperparameters identified during grid search.
+   - A classification report detailing precision, recall, F1-score, and support for each class in the test dataset.
+
+2. CSV Output:
+   - A file named "predicted_labels.csv" containing predicted labels for the validation dataset.
+
+---
+
+
+Steps to Run AttributionModel.py:
+1. Open a terminal and navigate to the directory containing "AttributionModel.py".
+2. Execute the script by running:
+   python AttributionModel.py
+
+Outputs:
+1. Console Output:
+   - Accuracy scores from stratified cross-validation.
+   - Evaluation metrics including accuracy, precision, recall, and F1-score.
+   - A confusion matrix and feature importance list.
+
+2. CSV Output:
+   - A file named "validation_predictions_inference.csv" containing predictions for the validation dataset.
+
+---
+
+Troubleshooting
+
+1. Missing Libraries: If libraries are missing, install them using the "pip" command.
+2. File Not Found: Ensure that "train.csv", "test.csv", and "val_without_labels.csv" are present in the working directory.
+3. Data Issues: Preprocess datasets to ensure they meet the requirements of the scripts, resolving missing or unexpected values if necessary.
+
+
+
